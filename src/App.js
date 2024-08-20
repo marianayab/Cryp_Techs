@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CipherSelection from './components/CipherSelection';
+import MessageExchange from './components/MessageExchange';
+import './App.css'
 
-function App() {
+function App ()  {
+  const [cipher, setCipher] = useState('');
+  const [key, setKey] = useState('');
+
+  const handleCipherSelect = (selectedCipher, selectedKey) => {
+    setCipher(selectedCipher);
+    setKey(selectedKey);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <Routes>
+        <Route path="/" element={<CipherSelection onCipherSelect={handleCipherSelect} />} />
+        <Route path="/exchange" element={<MessageExchange cipher={cipher} key={key} />} />
+      </Routes>
+
   );
 }
 
