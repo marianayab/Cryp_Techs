@@ -500,7 +500,7 @@ const decryptTranspositionCipher = (text, key) => {
 
   return (
     <div>
-      <h1 style={{textAlign:'center', color:'#9557b1'}}>{headin}</h1>
+      <h1 style={{textAlign:'center'}}>{headin}</h1>
       {cipher === 'vigenere' && (
         <div>
           <label>
@@ -600,7 +600,7 @@ const decryptTranspositionCipher = (text, key) => {
         </div>
       )}
       <div>
-        <h2 style={{color:'#9557b1'}}>Encryption</h2>
+        <h2>Encryption</h2>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value.toUpperCase())}
@@ -612,7 +612,7 @@ const decryptTranspositionCipher = (text, key) => {
         <p><strong>Encrypted Message:</strong> {encryptedMessage}</p>
       </div>
       <div>
-        <h2 style={{color:'#9557b1'}} >Decryption</h2>
+        <h2>Decryption</h2>
         <textarea
           value={encryptedMessage}
           onChange={(e) => setEncryptedMessage(e.target.value.toUpperCase())}

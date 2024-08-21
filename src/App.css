@@ -7,7 +7,7 @@
 
 form {
   margin: 20px auto;
-  width: 300px;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -15,6 +15,10 @@ form {
 
 label {
   font-weight: bold;
+}
+
+select{
+  margin-left: 15px;
 }
 
 input, select, button {
@@ -40,4 +44,11 @@ textarea {
 
 div {
   margin: 20px;
+}
+
+@media (max-width:500px) {
+  select{
+    margin-top: 15px;
+    margin-left: 0px;
+  }
 }
